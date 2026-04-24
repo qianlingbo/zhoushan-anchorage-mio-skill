@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>舟山锚地供油指数看板</title>
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+  <main class="dashboard">
+    <section class="hero">
+      <div>
+        <p class="eyebrow">API 数据 · 精细化预报</p>
+        <h1>舟山锚地供油指数看板</h1>
+        <p class="subtitle">
+          条帚门锚地、虾峙门外锚地、马峙锚地、秀山东锚地的 MIO 供油指数精细化预报一览。
+        </p>
+        <div class="weather-text" id="weather-text"></div>
+      </div>
+      <div class="meta-card">
+        <div>
+          <span class="meta-label">数据来源</span>
+          <a class="meta-link" href="https://www.zs121.com.cn/Portarea/Portarea" target="_blank" rel="noreferrer">
+            舟山海洋气象台 zs121.com.cn
+          </a>
+        </div>
+        <div>
+          <span class="meta-label">预报发布时间</span>
+          <strong id="publish-time">等待数据</strong>
+        </div>
+        <div>
+          <span class="meta-label">本地更新时间</span>
+          <strong id="last-updated">等待数据</strong>
+        </div>
+      </div>
+    </section>
+
+    <section class="controls" aria-label="页面状态">
+      <div class="status-pill" id="status-pill">等待数据</div>
+      <button class="refresh-link" type="button" id="refresh-button">重新读取本地数据</button>
+    </section>
+
+    <section class="grid" id="anchor-grid" aria-live="polite"></section>
+
+    <footer class="footer">
+      数据来源：<a href="https://www.zs121.com.cn/Portarea/Portarea" target="_blank" rel="noreferrer">舟山海洋气象台</a>
+      · MIO 评分：<span style="color:var(--mio-4)">●</span> 适宜
+      <span style="color:var(--mio-3)">●</span> 一般
+      <span style="color:var(--mio-2)">●</span> 较差
+      <span style="color:var(--mio-1)">●</span> 恶劣
+    </footer>
+  </main>
+
+  <script src="./data/data.js"></script>
+  <script src="./app.js"></script>
+</body>
+</html>
